@@ -1,11 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "mysc.h"
+#include "myTerm.h"
 
 #define CLR_SCR "\E[H\E[J" //очистка всей консоли
 
 int main()
 {
+	//printf("hello\n");
+	mt_clrscr();
+
+	mt_gotoXY(1, 1);
+	printf("create: Katya Antipova\n");
+
+	int sx;
+	int sy;
+	mt_getscreensize(&sx, &sy);
+	printf("Screen size: %d %d\n", sx, sy);
+
+	//mt_setbgcolor(BLACK);
+	//mt_setfgcolor(GREEN);
+	
+	mt_setbgcolor(BLACK);
+	mt_setfgcolor(RED);
 	int a, ch, address = 0, value = 0, comIn = 0, opIn = 0, resEn = 0, resDec = 0;
 	int memF = 0, comF = 0;
 
@@ -18,16 +35,25 @@ int main()
 
 		sc_regGet(F_VINX, &memF);
 		sc_regGet(F_BADCOM, &comF);
+		mt_setbgcolor(BLACK);
+		mt_setfgcolor(WHITE);
 
 		printf("FLAGS: out of memory: %d, bad command: %d\n", memF, comF );
 		printf("\n1)Encode\n2)Decode\n3)Save\n4)Download\n5)Exit\n");
 		scanf("%d", &ch);
 
 		switch(ch) {
+
 			case 1:
 			{
 				printf(CLR_SCR);
+				mt_setbgcolor(BLACK);
+				mt_setfgcolor(RED);
 				print();
+
+
+				mt_setbgcolor(BLACK);
+				mt_setfgcolor(WHITE);
 
 				printf("FLAGS: out of memory: %d, bad command: %d\n", memF, comF );
 				printf("Input command and operand: \n");
@@ -45,6 +71,7 @@ int main()
 			case 2:
 			{
 				printf(CLR_SCR);
+				
 				print();
 
 				printf("FLAGS: out of memory: %d, bad command: %d\n", memF, comF );
@@ -77,7 +104,6 @@ int main()
 				return 0;
 			}
 
-		
 		}
 	}
 	return 0;

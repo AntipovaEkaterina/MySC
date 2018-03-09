@@ -13,12 +13,12 @@ int sc_memoryInit()
 	return 0;
 }
 
-int sc_regInit(){ 
+int sc_regInit(){
 	REG = 0;
 	return 0;
 }
 
-int sc_memorySet(int address, int value){ //задает
+int sc_memorySet(int address, int value){
 	 if(address < 0 || address > MEMSIZE){
 	 	sc_regSet(F_VINX, 1);
 	 	return -1;
@@ -28,7 +28,7 @@ int sc_memorySet(int address, int value){ //задает
 	 return 0;
 }
 
-int sc_memoryGet(int address, int * value){//возвращает 
+int sc_memoryGet(int address, int * value){
 	if(address < 0 || address > MEMSIZE){
 	 	sc_regSet(F_VINX, 1);
 	 	return -1;
@@ -94,6 +94,7 @@ int sc_commandDecode(int value, int *command, int *operand){
 	*command = value >> 8;
 	return 0;
 }
+
 
 void print(){
 	int i, j = 1;

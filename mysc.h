@@ -1,14 +1,14 @@
 #ifndef MYSC_H
 #define MYSC_H
 
-#define MEMSIZE 100 //размер памяти
-#define COMSIZE 38 //кл-во команд 
-#define F_VINX 1 //флаг выход за границы  
-#define F_BADCOM 2 //плохая команда
+#define MEMSIZE 100
+#define COMSIZE 38
+#define F_VINX 1
+#define F_BADCOM 2
 #define ENCODE 127 
 
-int mem[MEMSIZE]; 
-int COMARR[COMSIZE]; 
+int mem[MEMSIZE];
+int COMARR[COMSIZE];
 
 int REG; //общий регистр
 int sc_memoryInit();
