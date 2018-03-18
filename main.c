@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "mysc.h"
 #include "myTerm.h"
+#include "myBC.h"
 
 #define CLR_SCR "\E[H\E[J" //очистка всей консоли
 
@@ -9,9 +10,8 @@ int main()
 {
 	//printf("hello\n");
 	mt_clrscr();
-
-	mt_gotoXY(1, 1);
-	printf("create: Katya Antipova\n");
+	//bc_Box(1, 1, 12, 62);
+	//	printf("\n");
 
 	int sx;
 	int sy;
@@ -31,6 +31,11 @@ int main()
 	while(1){
 		
 		printf(CLR_SCR);
+		bc_Box(1, 1, 3, 10);
+			
+		mt_gotoXY(2, 2);
+		printf("create: Katya Antipova\n");
+
 		print();
 
 		sc_regGet(F_VINX, &memF);
