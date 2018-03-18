@@ -10,10 +10,10 @@ int main()
 {
 	//printf("hello\n");
 	mt_clrscr();
-	//bc_Box(1, 1, 12, 62);
-	//	printf("\n");
+	bc_Box(1, 1, 12, 62);
+		printf("\n");
 
-	int sx;
+	/*int sx;
 	int sy;
 	mt_getscreensize(&sx, &sy);
 	printf("Screen size: %d %d\n", sx, sy);
@@ -112,4 +112,5 @@ int main()
 		}
 	}
 	return 0;
+	*/
 }
