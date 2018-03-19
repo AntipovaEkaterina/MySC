@@ -8,7 +8,7 @@ int sc_memoryInit()
 	int i;
 	int accumValue = 0;
 	int memoryPointer = 0;
-	
+	int counter = 0;
 
 	for (i = 0; i < MEMSIZE; i++)
 		mem[i] = 0;

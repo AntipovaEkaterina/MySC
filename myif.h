@@ -1,8 +1,8 @@
 #ifndef MYIF_H
 #define MYIF_H
 
-void displayMemory();//рисуем область памяти 
+void displayMemory(); 
 void displayAccumulator();
-
+void displayCounter();
 
 #endif

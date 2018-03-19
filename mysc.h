@@ -12,9 +12,9 @@ int COMARR[COMSIZE];
 
 int memoryPointer;//на какой ячейке я нахожусь
 int accumValue;
+int counter;//счетчик ячеек
 
-
-int REG; //общий регистр
+int REG; 
 int sc_memoryInit();
 int sc_memorySet(int , int);
 int sc_memoryGet(int, int *);

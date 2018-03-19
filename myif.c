@@ -55,4 +55,15 @@ void displayAccumulator()
 	return 0;
 }
 	
-
+void displayCounter(){
+	bc_Box(4, 63, 3, 18);
+	mt_gotoXY(4, 65);
+	printf("COUNTER");
+	
+	counter = memoryPointer;
+	mt_gotoXY(5, 69);
+	printf("+%04X", counter);
+	mt_gotoXY(25, 1);
+	
+	return 0;
+}
