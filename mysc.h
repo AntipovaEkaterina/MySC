@@ -10,6 +10,10 @@
 int mem[MEMSIZE];
 int COMARR[COMSIZE];
 
+int memoryPointer;//на какой ячейке я нахожусь
+int accumValue;
+
+
 int REG; //общий регистр
 int sc_memoryInit();
 int sc_memorySet(int , int);

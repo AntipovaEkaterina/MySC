@@ -3,6 +3,7 @@
 #include "mysc.h"
 #include "myTerm.h"
 #include "myBC.h"
+#include "myif.h"
 
 #define CLR_SCR "\E[H\E[J" //очистка всей консоли
 
@@ -10,8 +11,13 @@ int main()
 {
 	//printf("hello\n");
 	mt_clrscr();
-	bc_Box(1, 1, 12, 62);
-		printf("\n");
+	displayMemory();
+	sc_memoryInit();
+	displayAccumulator();
+
+	
+	/*bc_Box(5, 1, 10, 18);
+		printf("\n");*/
 
 	/*int sx;
 	int sy;
