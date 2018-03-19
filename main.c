@@ -16,6 +16,7 @@ int main()
 	displayAccumulator();
 	displayCounter();
 	displayOperation();
+	displayFlags();
 
 	
 	/*bc_Box(5, 1, 10, 18);

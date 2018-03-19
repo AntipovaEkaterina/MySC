@@ -79,3 +79,14 @@ void displayOperation()
 
 	return 0;
 }
+
+void displayFlags()
+{
+	bc_Box(10, 63, 3, 18);
+	mt_gotoXY(10, 65);
+	printf("FLAGS");
+	int flagVal;
+	mt_gotoXY(25, 1);
+
+	return 0;
+}
