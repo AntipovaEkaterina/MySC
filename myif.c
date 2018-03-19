@@ -90,3 +90,27 @@ void displayFlags()
 
 	return 0;
 }
+
+void displayMenu()
+{
+	bc_Box(13, 47, 10, 34);
+	mt_gotoXY(13, 49);
+	printf("MENU");
+	mt_gotoXY(15, 49);
+	printf("L - LOAD");
+	mt_gotoXY(16, 49);
+	printf("S - SAVE");
+	mt_gotoXY(17, 49);
+	printf("R - RUN");
+	mt_gotoXY(18, 49);
+	printf("T - STEP");
+	mt_gotoXY(19, 49);
+	printf("I - RESET");//сброс
+	mt_gotoXY(20, 49);
+	printf("F5 - ACCUMULATOR");
+	mt_gotoXY(21, 49);
+	printf("F6 - COUNTER");
+	mt_gotoXY(25, 1);
+	
+	return 0;
+}

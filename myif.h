@@ -6,6 +6,7 @@ void displayAccumulator();
 void displayCounter();
 void displayOperation();
 void displayFlags();
+void displayMenu();
 
 
 #endif

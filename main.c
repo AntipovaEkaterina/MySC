@@ -17,6 +17,7 @@ int main()
 	displayCounter();
 	displayOperation();
 	displayFlags();
+	displayMenu();
 
 	
 	/*bc_Box(5, 1, 10, 18);
