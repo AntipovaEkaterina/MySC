@@ -7,6 +7,7 @@ void displayCounter();
 void displayOperation();
 void displayFlags();
 void displayMenu();
+void displayBigCharArea();
 
 
 #endif

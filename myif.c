@@ -114,3 +114,23 @@ void displayMenu()
 	
 	return 0;
 }
+
+void displayBigCharArea() 
+{
+	mt_gotoXY(13, 1);
+	char buffer[20];//записываем строку
+
+	int y = 2;
+	bc_Box(13, 1, 10, 46);
+	mt_gotoXY(13, 5);
+	printf("BIG CHAR");
+	//массив чисел
+	BIG[0] = 0;
+	BIG[1] = 0;
+	sc_memoryGet(memoryPointer, &value);
+	sprintf(buffer, "+%04X", value);
+	int i;
+	mt_gotoXY(25, 1);
+
+	return 0;
+}

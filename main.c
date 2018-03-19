@@ -18,6 +18,7 @@ int main()
 	displayOperation();
 	displayFlags();
 	displayMenu();
+	displayBigCharArea();
 
 	
 	/*bc_Box(5, 1, 10, 18);
