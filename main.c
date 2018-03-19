@@ -15,6 +15,7 @@ int main()
 	sc_memoryInit();
 	displayAccumulator();
 	displayCounter();
+	displayOperation();
 
 	
 	/*bc_Box(5, 1, 10, 18);

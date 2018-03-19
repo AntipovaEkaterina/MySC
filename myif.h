@@ -4,5 +4,6 @@
 void displayMemory(); 
 void displayAccumulator();
 void displayCounter();
+void displayOperation();
 
 #endif

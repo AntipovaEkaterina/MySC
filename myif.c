@@ -60,10 +60,22 @@ void displayCounter(){
 	mt_gotoXY(4, 65);
 	printf("COUNTER");
 	
-	counter = memoryPointer;
+	counter = memoryPointer;//счетчик = ячейка
 	mt_gotoXY(5, 69);
 	printf("+%04X", counter);
 	mt_gotoXY(25, 1);
 	
+	return 0;
+}
+
+void displayOperation() 
+{
+	bc_Box(7, 63, 3, 18);
+	mt_gotoXY(7, 65);
+	printf("OPERATION");
+	mt_gotoXY(8, 65);
+	sc_memoryGet(memoryPointer, &value);
+	mt_gotoXY(25, 1);
+
 	return 0;
 }
