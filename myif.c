@@ -130,6 +130,11 @@ void displayBigCharArea()
 	sc_memoryGet(memoryPointer, &value);
 	sprintf(buffer, "+%04X", value);
 	int i;
+	for (i = 0; i < 5; ++i, y += 9) 
+	{
+		bc_setBig(BIG, buffer[i]);
+		bc_PrintBigChar(BIG, 14, y, GREEN, RED);
+	}
 	mt_gotoXY(25, 1);
 
 	return 0;
