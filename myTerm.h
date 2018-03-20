@@ -8,7 +8,7 @@
 #define BG_COLOR "\E[4%dm" //цвет фона
 #define FG_COLOR "\E[3%dm"//цвет текста
 
-enum Color {BLACK = 0, WHITE = 7, GREEN = 2, RED = 1};
+enum Color {DEFAULT = 9, BLACK = 0, WHITE = 7, GREEN = 2, RED = 1};
 
 //прототипы
 

@@ -11,8 +11,14 @@ int main()
 {
 	//printf("hello\n");
 	mt_clrscr();
-	displayMemory();
+
 	sc_memoryInit();
+	memoryPointer = 50;
+
+	sc_memorySet(memoryPointer, 0x30A);	
+
+	displayMemory();
+	//sc_memoryInit();
 	displayAccumulator();
 	displayCounter();
 	displayOperation();
