@@ -11,14 +11,14 @@ int main()
 {
 	//printf("hello\n");
 	mt_clrscr();
-	displayMemory();
+	/*displayMemory();
 	sc_memoryInit();
 	displayAccumulator();
 	displayCounter();
 	displayOperation();
 	displayFlags();
 	displayMenu();
-	displayBigCharArea();
+	displayBigCharArea();*/
 
 	
 	/*bc_Box(5, 1, 10, 18);
