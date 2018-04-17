@@ -28,7 +28,8 @@ void displayMemory(){
 
 		if (i % 10 == 0 && i != 0) 
 		{
-			k++; mt_gotoXY(k, 2);
+			k++; 
+			mt_gotoXY(k, 2);
 		}	
 	}
 	return 0;
@@ -134,7 +135,7 @@ void displayBigCharArea()
 	for (i = 0; i < 5; ++i, y += 9)// 
 	{
 		bc_setBig(BIG, buffer[i]);
-		bc_PrintBigChar(BIG, 14, y, GREEN, RED);
+		bc_PrintBigChar(BIG, 14, y, DEFAULT, RED);
 	}
 	mt_gotoXY(25, 1);
 

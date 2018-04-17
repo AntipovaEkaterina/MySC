@@ -4,6 +4,7 @@
 #include "myTerm.h"
 #include "myBC.h"
 #include "myif.h"
+#include "myRK.h"
 
 #define CLR_SCR "\E[H\E[J" //очистка всей консоли
 
@@ -15,7 +16,7 @@ int main()
 	sc_memoryInit();
 	memoryPointer = 50;
 
-	sc_memorySet(memoryPointer, 0x30A);	
+	sc_memorySet(memoryPointer, 0x20A);	
 
 	displayMemory();
 	//sc_memoryInit();

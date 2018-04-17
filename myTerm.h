@@ -3,8 +3,9 @@
 
 #include <sys/ioctl.h> 
 
+#define TERM "/dev/tty"
 #define CLR_SCR "\E[H\E[J" 
-#define GOTO "\E[%d;%dH" //переход к ккой-либ точке:строка;столбец
+#define GOTO "\E[%d;%dH" //переход к какой-либ точке:строка;столбец
 #define BG_COLOR "\E[4%dm" //цвет фона
 #define FG_COLOR "\E[3%dm"//цвет текста
 
