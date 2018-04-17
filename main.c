@@ -11,9 +11,14 @@
 int main()
 {
 	//printf("hello\n");
-	mt_clrscr();
-
-	sc_memoryInit();
+	//mt_clrscr();
+	enum Keys key = NONE;
+	
+	/*sc_memoryInit();
+	sc_regInit();
+	termInit();
+*/
+	/*sc_memoryInit();
 	memoryPointer = 50;
 
 	sc_memorySet(memoryPointer, 0x20A);	
@@ -26,6 +31,7 @@ int main()
 	displayFlags();
 	displayMenu();
 	displayBigCharArea();
+*/
 
 	
 	/*bc_Box(5, 1, 10, 18);
@@ -45,8 +51,16 @@ int main()
 	int memF = 0, comF = 0;
 
 	sc_memoryInit();
-	sc_regInit();
-	while(1){
+	sc_regInit();*/
+	int n = 0;
+	while(key != QUIT){
+		rk_readKey(&key);
+		if(key == LOAD) {
+			mt_clrscr();
+			printf("LOAD PRESSED %d TIMES\n");
+			n++;
+		}
+	}/*
 		
 		printf(CLR_SCR);
 		bc_Box(1, 1, 3, 10);
