@@ -55,11 +55,16 @@ int main()
 	int n = 0;
 	while(key != QUIT){
 		rk_readKey(&key);
-		if(key == LOAD) {
+		if(key == SAVE) {
 			mt_clrscr();
-			printf("LOAD PRESSED %d TIMES\n");
-			n++;
+			printf("SAVE PRESSED \n");
 		}
+		if (key == LOAD)
+		{
+			mt_clrscr();
+			printf("LOAD PRESSED \n");
+		}
+		return 0;
 	}/*
 		
 		printf(CLR_SCR);
