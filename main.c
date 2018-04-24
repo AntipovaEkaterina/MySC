@@ -10,144 +10,46 @@
 
 int main()
 {
-	//printf("hello\n");
-	//mt_clrscr();
 	enum Keys key = NONE;
-	
-	/*sc_memoryInit();
-	sc_regInit();
-	termInit();
-*/
-	/*sc_memoryInit();
-	memoryPointer = 50;
-
-	sc_memorySet(memoryPointer, 0x20A);	
-
-	displayMemory();
-	//sc_memoryInit();
-	displayAccumulator();
-	displayCounter();
-	displayOperation();
-	displayFlags();
-	displayMenu();
-	displayBigCharArea();
-*/
-
-	
-	/*bc_Box(5, 1, 10, 18);
-		printf("\n");*/
-
-	/*int sx;
-	int sy;
-	mt_getscreensize(&sx, &sy);
-	printf("Screen size: %d %d\n", sx, sy);
-
-	//mt_setbgcolor(BLACK);
-	//mt_setfgcolor(GREEN);
-	
-	mt_setbgcolor(BLACK);
-	mt_setfgcolor(RED);
-	int a, ch, address = 0, value = 0, comIn = 0, opIn = 0, resEn = 0, resDec = 0;
-	int memF = 0, comF = 0;
 
 	sc_memoryInit();
-	sc_regInit();*/
-	int n = 0;
-	while(key != QUIT){
+	sc_regInit();
+	termInit();
+
+	while(key != QUIT)
+	{
+		showAll();
 		rk_readKey(&key);
-		if(key == SAVE) {
-			mt_clrscr();
-			printf("SAVE PRESSED \n");
+
+		if (key == RIGHT) 
+			if (memoryPointer < 99) 
+				++memoryPointer;
+		if (key == LEFT) 
+			if (memoryPointer > 0) 
+				--memoryPointer;
+		if (key == UP) 
+			if (memoryPointer - 10 >= 0) 
+				memoryPointer -= 10;
+		if (key == DOWN) 
+			if (memoryPointer + 10 < 100) 
+				memoryPointer += 10;
+		if (key == F5) 
+			displayBox("ACCUM", 1);
+		if (key == F6) 
+			displayBox("COUNTER", 2);
+		if (key == EDIT) 
+			displayBox("EDIT CELL", 3);
+		if (key == LOAD) {
+			displayBox("FILE NAME", 4);
 		}
-		if (key == LOAD)
-		{
-			mt_clrscr();
-			printf("LOAD PRESSED \n");
+		if (key == SAVE) 
+			sc_memorySave("mem.dat");
+		if (key == RESET) {
+			sc_memoryInit();
+			sc_regInit();
 		}
-		return 0;
-	}/*
 		
-		printf(CLR_SCR);
-		bc_Box(1, 1, 3, 10);
-			
-		mt_gotoXY(2, 2);
-		printf("create: Katya Antipova\n");
 
-		print();
-
-		sc_regGet(F_VINX, &memF);
-		sc_regGet(F_BADCOM, &comF);
-		mt_setbgcolor(BLACK);
-		mt_setfgcolor(WHITE);
-
-		printf("FLAGS: out of memory: %d, bad command: %d\n", memF, comF );
-		printf("\n1)Encode\n2)Decode\n3)Save\n4)Download\n5)Exit\n");
-		scanf("%d", &ch);
-
-		switch(ch) {
-
-			case 1:
-			{
-				printf(CLR_SCR);
-				mt_setbgcolor(BLACK);
-				mt_setfgcolor(RED);
-				print();
-
-
-				mt_setbgcolor(BLACK);
-				mt_setfgcolor(WHITE);
-
-				printf("FLAGS: out of memory: %d, bad command: %d\n", memF, comF );
-				printf("Input command and operand: \n");
-				scanf("%d %d", &comIn, &opIn);
-
-				if(sc_commandEncode(comIn, opIn, &resEn) == 0){
-					printf("\nCODED: %X", resEn);
-					printf("\nINPUT ADDRESS: ");
-					scanf("%d", &address);
-					sc_memorySet(address, resEn);
-				}
-			}
-			break;
-
-			case 2:
-			{
-				printf(CLR_SCR);
-				
-				print();
-
-				printf("FLAGS: out of memory: %d, bad command: %d\n", memF, comF );
-				printf("Input address: \n");
-				scanf("%d", &address);
-
-				if(sc_memoryGet(address, &resDec) == 0){
-					printf("\nDECODED: %X", resDec);
-					sc_commandDecode( resDec, &comIn, &opIn);
-					printf("\nDECODED COMMAND: %d, DECODED OPERAND: %d", comIn, opIn);
-				}
-					scanf("%d", &a);		
-			}
-			break;
-
-			case 3:
-			{
-				sc_memorySave("mem.dat");
-			}
-			break;
-
-			case 4:
-			{
-				sc_memoryLoad("mem.dat");
-			}
-			break;
-
-			case 5:
-			{
-				return 0;
-			}
-
-		}
 	}
-	return 0;
-	*/
+	
 }

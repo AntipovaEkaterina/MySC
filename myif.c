@@ -10,6 +10,18 @@ int command;
 int operand;
 int value;
 
+void showAll() {
+mt_clrscr();
+displayMemory();
+displayAccumulator();
+displayCounter();
+displayOperation();
+displayFlags();
+displayMenu();
+displayBigCharArea();
+bc_Box(26, 1, 26, 2);
+}
+
 void displayMemory(){
 	int i;
 	int k = 2;
@@ -23,6 +35,8 @@ void displayMemory(){
 	for (i = 1; i <= 100; i++)//печать памяти 
 	{
 		sc_memoryGet(i - 1, &value);
+		if (memoryPointer == i - 1) 
+			mt_setbgcolor(RED);
 		printf("+%04X ", value);
 		mt_setbgcolor(DEFAULT);
 
@@ -135,9 +149,44 @@ void displayBigCharArea()
 	for (i = 0; i < 5; ++i, y += 9)// 
 	{
 		bc_setBig(BIG, buffer[i]);
-		bc_PrintBigChar(BIG, 14, y, DEFAULT, RED);
+		bc_PrintBigChar(BIG, 14, y, DEFAULT, DEFAULT);
 	}
 	mt_gotoXY(25, 1);
 
 	return 0;
 }
+
+void displayBox(char *title, int type) 
+{
+    mt_gotoXY(25, 1);
+
+    printf("%s: ", title);
+    if (type == 1) 
+    {
+    	scanf("%d", &accumValue);
+    }
+
+    else if (type == 2) 
+    {
+    	scanf("%d", &counter);
+    	if(counter >= 0 && counter < MEMSIZE) 
+    		memoryPointer = counter;
+    	else
+    	sc_regSet(F_VINX, 1);
+    }
+
+    else if (type == 3) 
+    {
+    	int com = 0, oper = 0, value;
+    	sc_memoryGet(memoryPointer, &value);
+    	sc_commandDecode(value, &com, &oper);
+    	mt_gotoXY(25, 1);
+    	printf("ENCODE(COM, OPER): ");
+    	scanf("%d %d", &com, &oper);
+    	sc_commandEncode(com, oper, &value);
+    	sc_memorySet(memoryPointer, value);
+    }
+}
+   
+
+
